@@ -39,14 +39,12 @@ function reverse_hash2($number)
 {
 	$letters = "acdegilmnoprstuw";
 
-	$remainder = ($number - ($number % 37)) / 37;
+	$reduced = ($number - ($number % 37)) / 37;
 	if ($number < 16) {
 		return null;
 	} else {
-	 	return reverse_hash2($remainder) . $letters[$number%37];
+	 	return reverse_hash2($reduced) . $letters[$number%37];
 	}
-
-	
 }
 
 echo( reverse_hash2(680131659347) . "\n");
@@ -54,3 +52,19 @@ echo( reverse_hash2(945924806726376) . "\n");
 
 $str = "gilleland";
 echo( reverse_hash2(recursive_hash2($str, strlen($str))) . "\n");
+
+function iterative_reverse_hash2($number)
+{
+	$letters = "acdegilmnoprstuw";
+	$string = "";
+
+	while ($number > 16) {
+		$string = $letters[($number % 37)] . $string;
+		$number = (($number - ($number % 37)) / 37);
+	}
+	return $string;
+}
+
+echo iterative_reverse_hash2(945924806726376) . "\n";
+echo( iterative_reverse_hash2(recursive_hash2($str, strlen($str))) . "\n");
+
