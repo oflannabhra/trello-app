@@ -5,4 +5,4 @@ A solution to Trello's [developer challenge](https://trello.com/jobs/developer),
 
 This is my initial solution, I'm sure many speed increases and efficiencies can be added.
 
-I'm preparing a blog post explaining my solution, I'll link it as soon as it's published.
+I wrote up a quick [blog post](http://oflannabhra.github.io/code/2014/trello-hash/) explaining my approach.
